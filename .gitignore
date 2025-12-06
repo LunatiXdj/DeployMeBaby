@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+functions/node_modules/
+
+# Build outputs
+.next/
+dist/
+build/
+coverage/
+public/static/
+*.ttf
+*.woff2
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+
+# Firebase / Functions artifacts
+firebase-debug.log
+firebase-debug.*.log
+.firebaserc
+firebase.json
+firebase-*.zip
+.firebase/
+emulator-ui/
+hosting/.cache
+functions.zip
+functions/lib/
+functions/.webpack/
+
+# Env and secrets
+.env
+.env.*
+*.local
+
+# Misc caches
+.cache/
+.tmp/
+

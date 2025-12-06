@@ -1,0 +1,185 @@
+@import 'react-big-calendar/lib/css/react-big-calendar.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/GoogleSans-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/GoogleSans-Medium.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/GoogleSans-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Lexend Deca';
+    src: url('/LexendDeca-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 20% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 20% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 20% 15%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 215 20% 35%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 210 40% 90%;
+    --accent-foreground: 215 20% 25%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+    --chart-1: 207 44% 49%;
+    --chart-2: 120 73% 75%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --card-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --button-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    font-size: 10pt;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 47% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 47% 18%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 217 91% 70%;
+    --chart-1: 207 44% 49%;
+    --chart-2: 120 73% 75%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --card-shadow: 0 1px 3px 0 rgb(255 255 255 / 0.1), 0 1px 2px -1px rgb(255 255 255 / 0.1);
+    --card-shadow-hover: 0 4px 6px -1px rgb(255 255 255 / 0.1), 0 2px 4px -2px rgb(255 255 255 / 0.1);
+    --button-shadow: 0 1px 2px 0 rgb(255 255 255 / 0.05);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* ... (rest of the file) */
+
+  .rbc-calendar {
+    @apply border border-border rounded-lg bg-card text-card-foreground p-4;
+  }
+
+  .rbc-toolbar {
+    @apply mb-4 flex flex-col sm:flex-row items-center gap-4;
+  }
+
+  .rbc-toolbar .rbc-toolbar-label {
+    @apply text-lg font-semibold;
+  }
+
+  .rbc-btn-group {
+    @apply inline-flex gap-1;
+  }
+
+  .rbc-btn-group button {
+    @apply bg-background text-foreground border border-input rounded-md px-3 py-1.5 text-sm hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .rbc-btn-group button.rbc-active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .rbc-header {
+    @apply text-center font-semibold p-2 border-b border-border;
+  }
+
+  .rbc-day-bg.rbc-today {
+    @apply bg-accent/30;
+  }
+
+  .rbc-event {
+    @apply bg-primary text-primary-foreground p-0 text-xs border-none;
+  }
+
+  .rbc-event.rbc-selected {
+    @apply bg-primary/80;
+  }
+
+  .rbc-event-content {
+    white-space: normal;
+    word-wrap: break-word;
+    @apply rounded-md;
+  }
+
+  .rbc-event:not(.rbc-event-start) .rbc-event-content {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .rbc-event:not(.rbc-event-end) .rbc-event-content {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

@@ -1,0 +1,17 @@
+# Settings for Backend (on Cloud Run).
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 0
+  # maxInstances: 100
+  # concurrency: 80
+  # cpu: 1
+  # memoryMiB: 512
+
+env:
+  # Grant access to secrets in Cloud Secret Manager.
+  # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
+  - variable: ADMIN_SDK_CONFIG_BASE64
+    secret: FIREBASE_ADMIN_CONFIG # Make sure this is the name of the secret you created in Step 3
+    availability:
+      - BUILD
+      - RUNTIME

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH-Service - Wartungsarbeiten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .phone {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3b82f6;
+            margin: 30px 0;
+            display: block;
+            text-decoration: none;
+        }
+
+        .phone:hover {
+            color: #60a5fa;
+        }
+
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #3b82f6;
+            margin: 40px auto;
+        }
+
+        .contact-form {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 1px solid #333;
+        }
+
+        .form-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: #000000;
+            border: 1px solid #444;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background: #3b82f6;
+            color: #ffffff;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+
+        .success-message, .error-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .success-message {
+            background: #065f46;
+            color: #d1fae5;
+            border: 1px solid #10b981;
+        }
+
+        .error-message {
+            background: #7f1d1d;
+            color: #fecaca;
+            border: 1px solid #ef4444;
+        }
+
+        .portal-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .portal-link:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+
+            .phone {
+                font-size: 1.3rem;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="/logo.png" alt="PH-Service Logo" class="logo">
+        </div>
+
+        <h1>🚧 Technische Wartung</h1>
+        
+        <div class="message">
+            <p>Aktuell gibt es Probleme mit unserem Hosting-Service.</p>
+            <p>Wir arbeiten bereits an einer schnellen Lösung!</p>
+        </div>
+
+        <a href="tel:+4917620527146" class="phone">📞 0176 / 2052 7146</a>
+
+        <p style="color: #999; font-size: 0.95rem;">
+            Für dringende Anfragen stehe ich Ihnen gerne telefonisch zur Verfügung.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="contact-form">
+            <h2 class="form-title">Schnellanfrage senden</h2>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="firstName">Vorname *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Nachname *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-Mail *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Ihre Nachricht *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn">Anfrage absenden</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                ✅ Vielen Dank! Ihre Nachricht wurde erfolgreich versendet.
+            </div>
+
+            <div class="error-message" id="errorMessage">
+                ❌ Es gab einen Fehler beim Versenden. Bitte versuchen Sie es später erneut oder rufen Sie uns direkt an.
+            </div>
+        </div>
+
+        <a href="/portal" class="portal-link">
+            → Zum Kundenportal (Projektanfragen)
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+            
+            // Reset messages
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Wird gesendet...';
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    successMsg.style.display = 'block';
+                    document.getElementById('contactForm').reset();
+                } else {
+                    throw new Error('Failed to send');
+                }
+            } catch (error) {
+                errorMsg.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Anfrage absenden';
+            }
+        });
+    </script>
+</body>
+</html>
