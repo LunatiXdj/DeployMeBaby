@@ -1,0 +1,9 @@
+specVersion: "v1"
+serviceId: "x-tool"
+location: "europe-west4"
+schema:
+  source: "./schema"
+  datasource:
+    firestore:
+      database: "(default)"
+connectorDirs: ["./example"]

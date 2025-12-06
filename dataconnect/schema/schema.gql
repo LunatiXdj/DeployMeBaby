@@ -1,0 +1,64 @@
+type User @table {
+  displayName: String!
+  companyName: String!
+  createdAt: Timestamp!
+  email: String
+  phoneNumber: String
+  address: String
+}
+
+type Customer @table {
+  user: User!
+  firstName: String!
+  lastName: String!
+  address: String!
+  createdAt: Timestamp!
+  companyName: String
+  email: String
+  phoneNumber: String
+}
+
+type Project @table {
+  user: User!
+  customer: Customer!
+  name: String!
+  status: String!
+  startDate: Date!
+  createdAt: Timestamp!
+  description: String
+  endDate: Date
+  location: String
+}
+
+type Article @table {
+  user: User!
+  name: String!
+  unit: String!
+  salePrice: Float!
+  createdAt: Timestamp!
+  description: String
+  purchasePrice: Float
+}
+
+type Document @table {
+  user: User!
+  project: Project
+  customer: Customer!
+  documentType: String!
+  documentDate: Date!
+  status: String!
+  createdAt: Timestamp!
+  documentNumber: String
+  totalAmount: Float
+  signatureImageURL: String
+  description: String
+}
+
+type DocumentLineItem @table {
+  document: Document!
+  article: Article
+  quantity: Int!
+  unitPrice: Float!
+  lineTotal: Float!
+  description: String
+}

@@ -1,0 +1,36 @@
+mutation CreateUser($companyName: String!, $displayName: String!, $createdAt: Timestamp!) @auth(level: USER) {
+  user_insert(data: {
+    companyName: $companyName,
+    displayName: $displayName,
+    createdAt: $createdAt
+  })
+}
+
+query GetCustomer @auth(level: USER) {
+  customer(key: {userId_expr: "auth.uid"}) {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    address
+    companyName
+    createdAt
+  }
+}
+
+mutation UpdateDocument($id: UUID!, $status: String) @auth(level: USER) {
+  document_update(key: {id: $id}, data: {status: $status})
+}
+
+query ListProjects @auth(level: USER) {
+  projects(where: {userId: {eq_expr: "auth.uid"}}) {
+    id
+    name
+    description
+    startDate
+    endDate
+    status
+    location
+  }
+}

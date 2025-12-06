@@ -1,0 +1,112 @@
+mutation CreateDemoData @transaction @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public.") {
+  user_insertMany(data: [
+    {
+      id: "550e8400-e29b-41d4-a716-446655440000",
+      companyName: "ExampleCorp",
+      displayName: "Demo User 1",
+      createdAt: "2024-01-01T00:00:00Z"
+    },
+    {
+      id: "550e8400-e29b-41d4-a716-446655440001",
+      companyName: "AnotherCorp",
+      displayName: "Demo User 2",
+      createdAt: "2024-01-02T00:00:00Z"
+    }
+  ])
+  customer_insertMany(data: [
+    {
+      id: "650e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      firstName: "John",
+      lastName: "Doe",
+      address: "123 Main St",
+      createdAt: "2024-01-03T00:00:00Z"
+    },
+    {
+      id: "650e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      firstName: "Jane",
+      lastName: "Smith",
+      address: "456 Elm St",
+      createdAt: "2024-01-04T00:00:00Z"
+    }
+  ])
+  project_insertMany(data: [
+    {
+      id: "750e8400-e29b-41d4-a716-446655440000",
+      customerId: "650e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      name: "Project Alpha",
+      startDate: "2024-01-05",
+      status: "Active",
+      createdAt: "2024-01-05T00:00:00Z"
+    },
+    {
+      id: "750e8400-e29b-41d4-a716-446655440001",
+      customerId: "650e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      name: "Project Beta",
+      startDate: "2024-01-06",
+      status: "Planning",
+      createdAt: "2024-01-06T00:00:00Z"
+    }
+  ])
+  document_insertMany(data: [
+    {
+      id: "850e8400-e29b-41d4-a716-446655440000",
+      customerId: "650e8400-e29b-41d4-a716-446655440000",
+      projectId: "750e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      documentDate: "2024-01-07",
+      documentType: "Invoice",
+      status: "Paid",
+      createdAt: "2024-01-07T00:00:00Z"
+    },
+    {
+      id: "850e8400-e29b-41d4-a716-446655440001",
+      customerId: "650e8400-e29b-41d4-a716-446655440001",
+      projectId: "750e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      documentDate: "2024-01-08",
+      documentType: "Estimate",
+      status: "Draft",
+      createdAt: "2024-01-08T00:00:00Z"
+    }
+  ])
+  article_insertMany(data: [
+    {
+      id: "950e8400-e29b-41d4-a716-446655440000",
+      userId: "550e8400-e29b-41d4-a716-446655440000",
+      name: "Widget A",
+      unit: "EA",
+      salePrice: 19.99,
+      createdAt: "2024-01-09T00:00:00Z"
+    },
+    {
+      id: "950e8400-e29b-41d4-a716-446655440001",
+      userId: "550e8400-e29b-41d4-a716-446655440001",
+      name: "Gadget B",
+      unit: "EA",
+      salePrice: 29.99,
+      createdAt: "2024-01-10T00:00:00Z"
+    }
+  ])
+  documentLineItem_insertMany(data: [
+    {
+      id: "a50e8400-e29b-41d4-a716-446655440000",
+      documentId: "850e8400-e29b-41d4-a716-446655440000",
+      articleId: "950e8400-e29b-41d4-a716-446655440000",
+      quantity: 2,
+      unitPrice: 19.99,
+      lineTotal: 39.98
+    },
+    {
+      id: "a50e8400-e29b-41d4-a716-446655440001",
+      documentId: "850e8400-e29b-41d4-a716-446655440001",
+      articleId: "950e8400-e29b-41d4-a716-446655440001",
+      quantity: 1,
+      unitPrice: 29.99,
+      lineTotal: 29.99
+    }
+  ])
+}

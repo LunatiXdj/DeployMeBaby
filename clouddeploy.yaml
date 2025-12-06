@@ -1,0 +1,31 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: nextjs-app-pipeline
+description: Main delivery pipeline for the Next.js app
+serialPipeline:
+  stages:
+  - targetId: staging
+    profiles: []
+  - targetId: prod
+    profiles: []
+
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: staging
+description: Staging Cloud Run service
+run:
+  location: projects/x-tool-ph-service/locations/europe-west4
+
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: prod
+description: Production Cloud Run service
+run:
+  location: projects/x-tool-ph-service/locations/europe-west4

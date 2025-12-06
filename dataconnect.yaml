@@ -1,0 +1,28 @@
+# dataconnect.yaml
+# Beschreibung: Diese Datei enthält die Konfiguration für die Datenverbindung.
+
+version: "1.0"
+
+connections:
+  - name: "primary_database"
+    type: "postgresql"
+    host: "localhost"
+    port: 5432
+    username: "user"
+    password: "password"
+    database: "example_db"
+
+  - name: "secondary_api"
+    type: "rest"
+    base_url: "https://api.example.com"
+    headers:
+      Authorization: "Bearer <token>"
+
+settings:
+  retry_policy:
+    max_retries: 3
+    backoff_strategy: "exponential"
+
+logging:
+  level: "info"
+  format: "json"

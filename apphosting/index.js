@@ -1,0 +1,1 @@
+console.log('Apphosting Minimal-Start: Hello World!');

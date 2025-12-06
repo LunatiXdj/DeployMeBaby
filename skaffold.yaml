@@ -1,0 +1,11 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+build:
+  artifacts:
+  - image: gcr.io/YOUR_PROJECT_ID/nextjs-app # Important: Change YOUR_PROJECT_ID
+    context: . # Build from the root directory
+manifests:
+  rawYaml:
+  - service.yaml
+deploy:
+  cloudrun: {}

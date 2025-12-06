@@ -1,0 +1,22 @@
+
+[
+  {
+    "origin": [
+      "http://localhost:3001",
+      "https://x-tool-ph-service.web.app",
+      "https://x-tool-ph-service.firebaseapp.com"
+    ],
+    "method": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE",
+      "OPTIONS"
+    ],
+    "responseHeader": [
+      "Content-Type",
+      "Authorization"
+    ],
+    "maxAgeSeconds": 3600
+  }
+]

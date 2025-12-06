@@ -1,0 +1,9 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: X-Tool for PH-Services # Name of your Cloud Run service
+spec:
+  template:
+    spec:
+      containers:
+      - image: nextjs-app # This is a placeholder, Skaffold will replace it

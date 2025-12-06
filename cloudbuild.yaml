@@ -1,0 +1,20 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '--build-arg'
+  - 'ADMIN_SDK_CONFIG_BASE64=${_FIREBASE_ADMIN_CONFIG}'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/nextjs-app:$COMMIT_SHA'
+  - '.'
+  secretEnv: ['ADMIN_SDK_CONFIG_BASE64']
+images:
+- 'gcr.io/$PROJECT_ID/nextjs-app:$COMMIT_SHA'
+availableSecrets:
+  secretManager:
+  - versionName: projects/x-tool-ph-service/secrets/FIREBASE_ADMIN_CONFIG/versions/latest
+    env: 'ADMIN_SDK_CONFIG_BASE64'
+serviceAccount: 'projects/x-tool-ph-service/serviceAccounts/firebase-app-hosting-compute@x-tool-ph-service.iam.gserviceaccount.com' # Ihr benutzerdefiniertes Dienstkonto
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+  logging: GCS_ONLY # Optional, aber gute Praxis bei der Verwendung von Buckets

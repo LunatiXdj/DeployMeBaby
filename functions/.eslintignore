@@ -1,0 +1,7 @@
+# Ignore build output
+/lib
+
+# Ignore generated files
+/src/dataconnect-generated
+/src/genkit-sample.js
+/src/index.js

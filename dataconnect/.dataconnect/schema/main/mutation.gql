@@ -1,0 +1,674 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Article` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  article_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Article_Data!
+  ): Article_KeyOutput! @fdc_generated(from: "Article", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Customer` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  customer_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Customer_Data!
+  ): Customer_KeyOutput! @fdc_generated(from: "Customer", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Document` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  document_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Document_Data!
+  ): Document_KeyOutput! @fdc_generated(from: "Document", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `DocumentLineItem` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  documentLineItem_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: DocumentLineItem_Data!
+  ): DocumentLineItem_KeyOutput! @fdc_generated(from: "DocumentLineItem", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Project` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  project_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Project_Data!
+  ): Project_KeyOutput! @fdc_generated(from: "Project", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Article` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  article_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Article_Data!]!
+  ): [Article_KeyOutput!]! @fdc_generated(from: "Article", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Customer` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  customer_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Customer_Data!]!
+  ): [Customer_KeyOutput!]! @fdc_generated(from: "Customer", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Document` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  document_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Document_Data!]!
+  ): [Document_KeyOutput!]! @fdc_generated(from: "Document", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `DocumentLineItem` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  documentLineItem_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [DocumentLineItem_Data!]!
+  ): [DocumentLineItem_KeyOutput!]! @fdc_generated(from: "DocumentLineItem", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Project` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  project_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Project_Data!]!
+  ): [Project_KeyOutput!]! @fdc_generated(from: "Project", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Article` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Article`.
+  """
+  article_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Article_Data!
+  ): Article_KeyOutput! @fdc_generated(from: "Article", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Customer` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Customer`.
+  """
+  customer_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Customer_Data!
+  ): Customer_KeyOutput! @fdc_generated(from: "Customer", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Document` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Document`.
+  """
+  document_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Document_Data!
+  ): Document_KeyOutput! @fdc_generated(from: "Document", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `DocumentLineItem` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DocumentLineItem`.
+  """
+  documentLineItem_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: DocumentLineItem_Data!
+  ): DocumentLineItem_KeyOutput! @fdc_generated(from: "DocumentLineItem", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Project` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Project`.
+  """
+  project_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Project_Data!
+  ): Project_KeyOutput! @fdc_generated(from: "Project", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Article` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Article`.
+  """
+  article_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Article_Data!]!
+  ): [Article_KeyOutput!]! @fdc_generated(from: "Article", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Customer` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Customer`.
+  """
+  customer_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Customer_Data!]!
+  ): [Customer_KeyOutput!]! @fdc_generated(from: "Customer", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Document` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Document`.
+  """
+  document_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Document_Data!]!
+  ): [Document_KeyOutput!]! @fdc_generated(from: "Document", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `DocumentLineItem` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `DocumentLineItem`.
+  """
+  documentLineItem_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [DocumentLineItem_Data!]!
+  ): [DocumentLineItem_KeyOutput!]! @fdc_generated(from: "DocumentLineItem", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Project` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Project`.
+  """
+  project_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Project_Data!]!
+  ): [Project_KeyOutput!]! @fdc_generated(from: "Project", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Article` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Article` or `null` if not found.
+  """
+  article_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Article_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Article_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Article_Data!
+  ): Article_KeyOutput @fdc_generated(from: "Article", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Customer` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Customer` or `null` if not found.
+  """
+  customer_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Customer_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Customer_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Customer_Data!
+  ): Customer_KeyOutput @fdc_generated(from: "Customer", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Document` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Document` or `null` if not found.
+  """
+  document_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Document_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Document_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Document_Data!
+  ): Document_KeyOutput @fdc_generated(from: "Document", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `DocumentLineItem` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `DocumentLineItem` or `null` if not found.
+  """
+  documentLineItem_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DocumentLineItem_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DocumentLineItem_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: DocumentLineItem_Data!
+  ): DocumentLineItem_KeyOutput @fdc_generated(from: "DocumentLineItem", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Project` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Project` or `null` if not found.
+  """
+  project_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Project_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Project_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Project_Data!
+  ): Project_KeyOutput @fdc_generated(from: "Project", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Article` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  article_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Article_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Article_Data!
+  ): Int! @fdc_generated(from: "Article", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Customer` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  customer_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Customer_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Customer_Data!
+  ): Int! @fdc_generated(from: "Customer", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Document` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  document_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Document_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Document_Data!
+  ): Int! @fdc_generated(from: "Document", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `DocumentLineItem` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  documentLineItem_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: DocumentLineItem_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: DocumentLineItem_Data!
+  ): Int! @fdc_generated(from: "DocumentLineItem", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Project` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  project_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Project_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Project_Data!
+  ): Int! @fdc_generated(from: "Project", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Article` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  article_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Article_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Article_FirstRow
+  ): Article_KeyOutput @fdc_generated(from: "Article", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Customer` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  customer_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Customer_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Customer_FirstRow
+  ): Customer_KeyOutput @fdc_generated(from: "Customer", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Document` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  document_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Document_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Document_FirstRow
+  ): Document_KeyOutput @fdc_generated(from: "Document", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `DocumentLineItem` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  documentLineItem_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DocumentLineItem_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DocumentLineItem_FirstRow
+  ): DocumentLineItem_KeyOutput @fdc_generated(from: "DocumentLineItem", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Project` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  project_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Project_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Project_FirstRow
+  ): Project_KeyOutput @fdc_generated(from: "Project", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Article` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  article_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Article_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Article", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Customer` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  customer_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Customer_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Customer", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Document` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  document_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Document_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Document", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `DocumentLineItem` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  documentLineItem_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: DocumentLineItem_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "DocumentLineItem", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Project` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  project_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Project_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Project", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+}

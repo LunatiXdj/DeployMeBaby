@@ -1,0 +1,14 @@
+{
+  "version": "2",
+  "projectNumber": "782160179942",
+  "projectId": "x-tool-ph-service",
+  "appId": "1:782160179942:web:129ddeb35551a468bfc127",
+  "realtimeDatabaseInstanceUri": "https://x-tool-ph-service-default-rtdb.europe-west1.firebasedatabase.app",
+  "realtimeDatabaseUrl": "https://x-tool-ph-service-default-rtdb.europe-west1.firebasedatabase.app/",
+  "storageBucket": "x-tool-ph-service.firebasestorage.app",
+  "locationId": "europe-west4",
+  "apiKey": "AIzaSyBpvKS2sb6_CagG_jCvJOAQqY-QXz7Huvg",
+  "authDomain": "x-tool-ph-service.firebaseapp.com",
+  "messagingSenderId": "782160179942",
+  "measurementId": "G-KRWTG1JY14"
+}

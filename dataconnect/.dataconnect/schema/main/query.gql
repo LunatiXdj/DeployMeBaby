@@ -1,0 +1,320 @@
+extend type Query {
+  """
+  ✨ Look up a single `Article` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  article(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Article_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Article_FirstRow
+  ): Article @fdc_generated(from: "Article", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Customer` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  customer(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Customer_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Customer_FirstRow
+  ): Customer @fdc_generated(from: "Customer", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Document` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  document(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Document_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Document_FirstRow
+  ): Document @fdc_generated(from: "Document", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `DocumentLineItem` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  documentLineItem(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: DocumentLineItem_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: DocumentLineItem_FirstRow
+  ): DocumentLineItem @fdc_generated(from: "DocumentLineItem", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Project` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  project(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Project_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Project_FirstRow
+  ): Project @fdc_generated(from: "Project", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `User` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  user(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User @fdc_generated(from: "User", purpose: QUERY_SINGLE)
+  """
+  ✨ List `Article` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  articles(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Article_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Article_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Article_Having
+  ): [Article!]! @fdc_generated(from: "Article", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Customer` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  customers(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Customer_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Customer_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Customer_Having
+  ): [Customer!]! @fdc_generated(from: "Customer", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Document` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  documents(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Document_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Document_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Document_Having
+  ): [Document!]! @fdc_generated(from: "Document", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `DocumentLineItem` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  documentLineItems(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: DocumentLineItem_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [DocumentLineItem_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: DocumentLineItem_Having
+  ): [DocumentLineItem!]! @fdc_generated(from: "DocumentLineItem", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Project` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  projects(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Project_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Project_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Project_Having
+  ): [Project!]! @fdc_generated(from: "Project", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `User` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  users(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: User_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [User_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: User_Having
+  ): [User!]! @fdc_generated(from: "User", purpose: QUERY_MULTIPLE)
+}
