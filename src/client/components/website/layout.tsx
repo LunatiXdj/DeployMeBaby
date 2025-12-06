@@ -19,12 +19,13 @@ const secondaryNavItem = { href: '/lunatix/live', label: 'LunatiX LIVE' };
 export function WebsiteLayout({ children, showLoginButton = true }: { children: ReactNode, showLoginButton?: boolean }) {
     return (
         <div className="flex min-h-screen flex-col">
+            {/* DEBUG: WebsiteLayout Header */}
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="container flex h-14 items-center">
                     <div className="mr-4 hidden md:flex">
                         <Link href="/" className="mr-6 flex items-center space-x-2">
                             <Image src="/logo.png" alt="PH-Service Logo" width={28} height={28} unoptimized loading="eager" />
-                            <span className="font-bold sm:inline-block">PH-Service</span>
+                            <span className="font-bold sm:inline-block">PH-Service [WEBSITE LAYOUT]</span>
                         </Link>
                         <nav className="flex items-center space-x-6 text-sm font-medium">
                             {navItems.map(item => (
@@ -68,9 +69,10 @@ export function WebsiteLayout({ children, showLoginButton = true }: { children: 
             </header>
             <main className="flex-1">{children}</main>
             <footer className="py-6 md:px-8 md:py-0 border-t">
+                {/* DEBUG: WebsiteLayout Footer */}
                 <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
                     <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-                        © {new Date().getFullYear()} PH-Service. Alle Rechte vorbehalten.
+                        © {new Date().getFullYear()} PH-Service. Alle Rechte vorbehalten. [WEBSITE LAYOUT FOOTER]
                     </p>
                     <div className="flex items-center gap-4">
                         <Link href="/impressum" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Impressum</Link>
