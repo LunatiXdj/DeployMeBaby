@@ -37,7 +37,7 @@ const navItems = [
     { href: '/leistungen', label: 'Leistungen' },
     { href: '/referenzen', label: 'Referenzen' },
     { href: '/kontakt', label: 'Kontakt' },
-    { href: 'https://ph-service-xtool-ph-service-xtool.web.app/app', label: 'Kundenportal' },
+    { href: '/portal', label: 'Anfrageportal' },
 ];
 
 export function HomePage() {
