@@ -29,6 +29,10 @@ const projectConverter = {
 
 export async function getProjects(): Promise<Project[]> {
     const db = getFirebaseAdminDb();
+    if (!db) {
+      console.warn('Firebase Admin DB not available');
+      return [];
+    }
     const projectsCollection = db.collection('projects').withConverter(projectConverter);
     const snapshot = await projectsCollection.orderBy('createdAt', 'desc').get();
     return snapshot.docs.map(doc => doc.data());

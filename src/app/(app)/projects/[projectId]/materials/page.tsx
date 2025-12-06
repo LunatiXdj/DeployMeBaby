@@ -7,12 +7,18 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const projects = await getProjects();
-  return projects
-    .filter(project => project.id)
-    .map((project) => ({
-      projectId: project.id,
-    }));
+  try {
+    const projects = await getProjects();
+    return projects
+      .filter(project => project.id)
+      .map((project) => ({
+        projectId: project.id,
+      }));
+  } catch (error) {
+    // Return empty array if Firebase is not available (e.g., during build)
+    console.warn('Could not generate static params for projects:', error);
+    return [];
+  }
 }
 
 export default function ProjectMaterialsPage({ params }: PageProps) {

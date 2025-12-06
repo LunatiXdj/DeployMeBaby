@@ -47,6 +47,10 @@ async function enrichQuotesWithRelations(quotesData: Omit<Quote, 'id'>[]): Promi
 export async function getQuotesAdmin(): Promise<Quote[]> {
   try {
     const adminDb = getFirebaseAdminDb();
+    if (!adminDb) {
+      console.warn('Firebase Admin DB not available');
+      return [];
+    }
     const quotesSnapshot = await adminDb.collection('quotes').orderBy('date', 'desc').get();
     
     const quotesData = quotesSnapshot.docs.map(doc => doc.data() as Omit<Quote, 'id'>);
