@@ -65,7 +65,7 @@ export function HomePage() {
                         </Link>
                     ))}
                     <Button asChild>
-                        <Link href="https://ph-service-xtool-ph-service-xtool.web.app/login">Anmelden</Link>
+                        <Link href="/login">Anmelden</Link>
                     </Button>
                 </nav>
 
@@ -90,7 +90,7 @@ export function HomePage() {
                                 </Link>
                             ))}
                             <Button asChild className="mt-4">
-                                <Link href="https://ph-service-xtool-ph-service-xtool.web.app/login">Anmelden</Link>
+                                <Link href="/login">Anmelden</Link>
                             </Button>
                         </nav>
                     </SheetContent>
