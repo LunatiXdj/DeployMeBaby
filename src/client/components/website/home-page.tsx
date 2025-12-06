@@ -64,9 +64,6 @@ export function HomePage() {
                             {item.label}
                         </Link>
                     ))}
-                    <Button asChild>
-                        <Link href="/login">Anmelden</Link>
-                    </Button>
                 </nav>
 
                 {/* Mobile Menu */}
@@ -89,9 +86,6 @@ export function HomePage() {
                                     {item.label}
                                 </Link>
                             ))}
-                            <Button asChild className="mt-4">
-                                <Link href="/login">Anmelden</Link>
-                            </Button>
                         </nav>
                     </SheetContent>
                 </Sheet>
