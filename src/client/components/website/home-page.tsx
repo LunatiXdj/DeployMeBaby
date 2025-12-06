@@ -4,13 +4,6 @@ import Link from 'next/link';
 import { Button } from '@/client/components/ui/button';
 import { Card, CardContent } from '@/client/components/ui/card';
 import Image from 'next/image';
-import { Menu } from 'lucide-react';
-import { useState } from 'react';
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-} from '@/client/components/ui/sheet';
 
 
 
@@ -32,66 +25,9 @@ const services = [
     }
 ]
 
-const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/leistungen', label: 'Leistungen' },
-    { href: '/referenzen', label: 'Referenzen' },
-    { href: '/kontakt', label: 'Kontakt' },
-    { href: '/portal', label: 'Anfrageportal' },
-];
-
 export function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <>
-        {/* Navigation Header */}
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-                <Link href="/" className="flex items-center gap-2">
-                    <Image src="/logo.png" alt="PH-Service Logo" width={40} height={40} className="h-10 w-10 object-contain" />
-                    <span className="font-bold text-xl">PH-Service</span>
-                </Link>
-                
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center gap-6">
-                    {navItems.map((item) => (
-                        <Link 
-                            key={item.href} 
-                            href={item.href}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            {item.label}
-                        </Link>
-                    ))}
-                </nav>
-
-                {/* Mobile Menu */}
-                <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-                    <SheetTrigger asChild className="md:hidden">
-                        <Button variant="ghost" size="icon">
-                            <Menu className="h-6 w-6" />
-                            <span className="sr-only">Menü öffnen</span>
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent side="right">
-                        <nav className="flex flex-col gap-4 mt-8">
-                            {navItems.map((item) => (
-                                <Link 
-                                    key={item.href} 
-                                    href={item.href}
-                                    className="text-lg font-medium hover:text-primary transition-colors"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
-                        </nav>
-                    </SheetContent>
-                </Sheet>
-            </div>
-        </header>
-
         <section className="w-full py-12 md:py-24 lg:py-32 bg-background text-foreground">
             <div className="container px-4 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
